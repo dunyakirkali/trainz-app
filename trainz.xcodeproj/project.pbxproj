@@ -13,6 +13,7 @@
 		0589F11520EC99EE00522EA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0589F11320EC99EE00522EA8 /* Main.storyboard */; };
 		0589F12120EC99EE00522EA8 /* trainzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589F12020EC99EE00522EA8 /* trainzTests.swift */; };
 		0589F12C20EC99EE00522EA8 /* trainzUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589F12B20EC99EE00522EA8 /* trainzUITests.swift */; };
+		111D21DEB434A54D25A28FF3 /* Pods_trainz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B514A29CFAC8638A99C2768A /* Pods_trainz.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,9 @@
 		0589F12720EC99EE00522EA8 /* trainzUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = trainzUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0589F12B20EC99EE00522EA8 /* trainzUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trainzUITests.swift; sourceTree = "<group>"; };
 		0589F12D20EC99EE00522EA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		585B5F3F5997883DA7B7BFD2 /* Pods-trainz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trainz.debug.xcconfig"; path = "Pods/Target Support Files/Pods-trainz/Pods-trainz.debug.xcconfig"; sourceTree = "<group>"; };
+		7449519FA2B6882FAF6B156A /* Pods-trainz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trainz.release.xcconfig"; path = "Pods/Target Support Files/Pods-trainz/Pods-trainz.release.xcconfig"; sourceTree = "<group>"; };
+		B514A29CFAC8638A99C2768A /* Pods_trainz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trainz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				111D21DEB434A54D25A28FF3 /* Pods_trainz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +85,8 @@
 				0589F11F20EC99EE00522EA8 /* trainzTests */,
 				0589F12A20EC99EE00522EA8 /* trainzUITests */,
 				0589F10B20EC99EB00522EA8 /* Products */,
+				957DFA7FDF9EFA01B53D7A96 /* Pods */,
+				61D48FE6307DA764C33243AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +131,23 @@
 			path = trainzUITests;
 			sourceTree = "<group>";
 		};
+		61D48FE6307DA764C33243AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B514A29CFAC8638A99C2768A /* Pods_trainz.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		957DFA7FDF9EFA01B53D7A96 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				585B5F3F5997883DA7B7BFD2 /* Pods-trainz.debug.xcconfig */,
+				7449519FA2B6882FAF6B156A /* Pods-trainz.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0589F13020EC99EE00522EA8 /* Build configuration list for PBXNativeTarget "trainz" */;
 			buildPhases = (
+				2A5FEA9FE51A5CAA2067A567 /* [CP] Check Pods Manifest.lock */,
 				0589F10620EC99EB00522EA8 /* Sources */,
 				0589F10720EC99EB00522EA8 /* Frameworks */,
 				0589F10820EC99EB00522EA8 /* Resources */,
+				B3001D0E0D3B2A258429A41E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -248,6 +274,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A5FEA9FE51A5CAA2067A567 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-trainz-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3001D0E0D3B2A258429A41E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-trainz/Pods-trainz-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-trainz/Pods-trainz-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0589F10620EC99EB00522EA8 /* Sources */ = {
@@ -417,6 +486,7 @@
 		};
 		0589F13120EC99EE00522EA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 585B5F3F5997883DA7B7BFD2 /* Pods-trainz.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = trainz/trainz.entitlements;
@@ -436,6 +506,7 @@
 		};
 		0589F13220EC99EE00522EA8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7449519FA2B6882FAF6B156A /* Pods-trainz.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = trainz/trainz.entitlements;
