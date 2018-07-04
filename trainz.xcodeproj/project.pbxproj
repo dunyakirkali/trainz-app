@@ -14,6 +14,7 @@
 		0589F12120EC99EE00522EA8 /* trainzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589F12020EC99EE00522EA8 /* trainzTests.swift */; };
 		0589F12C20EC99EE00522EA8 /* trainzUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589F12B20EC99EE00522EA8 /* trainzUITests.swift */; };
 		0591E1AB20ED172E006F56AE /* horn.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 0591E1AA20ED172E006F56AE /* horn.aiff */; };
+		85D7B3C5D975082E7060767D /* Pods_trainz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B514A29CFAC8638A99C2768A /* Pods_trainz.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85D7B3C5D975082E7060767D /* Pods_trainz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +178,7 @@
 				0589F10620EC99EB00522EA8 /* Sources */,
 				0589F10720EC99EB00522EA8 /* Frameworks */,
 				0589F10820EC99EB00522EA8 /* Resources */,
+				5A326DCF57D65FB335C45F41 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -309,6 +312,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A326DCF57D65FB335C45F41 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-trainz/Pods-trainz-frameworks.sh",
+				"${PODS_ROOT}/Mapbox-macOS-SDK/Mapbox.framework",
+				"${PODS_ROOT}/Mapbox-macOS-SDK/Mapbox.framework.dSYM",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-trainz/Pods-trainz-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

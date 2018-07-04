@@ -1,3 +1,16 @@
-PODFILE CHECKSUM: e94a1b079b971d04f2a3229eb9d97deb0f2cfe54
+PODS:
+  - Mapbox-macOS-SDK (0.8.0)
+
+DEPENDENCIES:
+  - Mapbox-macOS-SDK
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Mapbox-macOS-SDK
+
+SPEC CHECKSUMS:
+  Mapbox-macOS-SDK: 0bf8ec089d10716a77f7073585076b8710ad751e
+
+PODFILE CHECKSUM: bb89d796fb56f576b9d762fc95c1b03c3530a8c3
 
 COCOAPODS: 1.5.3

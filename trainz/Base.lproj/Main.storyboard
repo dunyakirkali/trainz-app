@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
-        <plugIn identifier="com.apple.MapKitIBPlugin" version="14113"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -710,9 +709,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <mapView mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="79Y-vQ-oQT">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="6lq-cG-XRI" customClass="MGLMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                            </mapView>
+                            </customView>
                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nf7-e1-Xe6">
                                 <rect key="frame" x="366" y="233" width="96" height="19"/>
                                 <constraints>
@@ -743,24 +742,39 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Fzm-MG-N1U">
+                                <rect key="frame" x="358" y="156" width="104" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="ZMt-v4-h4m"/>
+                                    <constraint firstAttribute="width" constant="100" id="naf-gQ-dYP"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="0 km/h" id="fvA-SB-Ra8">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="6lq-cG-XRI" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="0h8-Ub-moS"/>
                             <constraint firstItem="rKf-vI-1qK" firstAttribute="top" secondItem="t67-kF-plB" secondAttribute="bottom" constant="8" id="5ju-bM-YDD"/>
                             <constraint firstItem="Nf7-e1-Xe6" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="8hg-oc-uCA"/>
+                            <constraint firstAttribute="trailing" secondItem="6lq-cG-XRI" secondAttribute="trailing" id="Hhz-q5-uxq"/>
+                            <constraint firstAttribute="bottom" secondItem="6lq-cG-XRI" secondAttribute="bottom" id="Ojk-cp-IkB"/>
                             <constraint firstItem="t67-kF-plB" firstAttribute="top" secondItem="Nf7-e1-Xe6" secondAttribute="bottom" constant="8" id="UPo-KY-ofy"/>
                             <constraint firstAttribute="trailing" secondItem="Nf7-e1-Xe6" secondAttribute="trailing" constant="20" id="XNt-K4-StX"/>
                             <constraint firstAttribute="trailing" secondItem="rKf-vI-1qK" secondAttribute="trailing" constant="20" id="ZTO-7T-vEq"/>
-                            <constraint firstItem="79Y-vQ-oQT" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="dF3-Bw-nam"/>
-                            <constraint firstAttribute="trailing" secondItem="79Y-vQ-oQT" secondAttribute="trailing" id="fQf-7r-RGp"/>
-                            <constraint firstItem="79Y-vQ-oQT" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="hCJ-h0-ifd"/>
-                            <constraint firstAttribute="bottom" secondItem="79Y-vQ-oQT" secondAttribute="bottom" id="kZa-l4-Yw3"/>
+                            <constraint firstAttribute="trailing" secondItem="Fzm-MG-N1U" secondAttribute="trailing" constant="20" id="dt6-Nf-B1L"/>
+                            <constraint firstItem="6lq-cG-XRI" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="l7c-nW-QpN"/>
                             <constraint firstAttribute="trailing" secondItem="t67-kF-plB" secondAttribute="trailing" constant="20" id="suz-YT-k8N"/>
+                            <constraint firstItem="Fzm-MG-N1U" firstAttribute="top" secondItem="rKf-vI-1qK" secondAttribute="bottom" constant="8" id="zEY-ug-uay"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="followToggle" destination="t67-kF-plB" id="Cuj-Wg-zLG"/>
                         <outlet property="hornButton" destination="rKf-vI-1qK" id="NMA-QT-473"/>
-                        <outlet property="mapView" destination="79Y-vQ-oQT" id="YsH-5C-0ps"/>
+                        <outlet property="mapView" destination="6lq-cG-XRI" id="nEE-0f-TDV"/>
+                        <outlet property="speedLabel" destination="Fzm-MG-N1U" id="moO-4j-cDF"/>
                         <outlet property="speedSlider" destination="Nf7-e1-Xe6" id="NaL-zv-Afj"/>
                     </connections>
                 </viewController>
