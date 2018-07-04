@@ -26,9 +26,6 @@ class ViewController: NSViewController {
         setupSlider()
         setupToggle()
         setupHorn()
-        
-        let center = CLLocationCoordinate2D(latitude: 19.820689, longitude: -155.468038)
-        mapView.setCenter(center, animated: false)
     }
 
     override var representedObject: Any? {
@@ -39,6 +36,7 @@ class ViewController: NSViewController {
 
     private func setupMapView() {
         mapView.delegate = self
+        mapView.setCenter(CLLocationCoordinate2D(latitude:38.897435, longitude: -77.039679), animated: false)
     }
     
     private func setupSlider() {
@@ -59,15 +57,51 @@ class ViewController: NSViewController {
 }
 
 extension ViewController: MGLMapViewDelegate {
-    func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
-        // Wait for the map to load before initiating the first camera movement.
+    func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
         
-        // Create a camera that rotates around the same center point, rotating 180°.
-        // `fromDistance:` is meters above mean sea level that an eye would have to be in order to see what the map view is showing.
-        let camera = MGLMapCamera(lookingAtCenter: mapView.centerCoordinate, fromDistance: 4500, pitch: 15, heading: 180)
+        // Parse the GeoJSON data.
+//        DispatchQueue.global().async {
+            guard let url = Bundle.main.url(forResource: "metro-line", withExtension: "geojson") else { return }
+            
+            let data = try! Data(contentsOf: url)
+            
+            DispatchQueue.main.async {
+                self.drawShapeCollection(data: data)
+            }
+//        }
+    }
+    
+    func drawShapeCollection(data: Data) {
+        guard let style = self.mapView.style else { return }
         
-        // Animate the camera movement over 5 seconds.
-        mapView.setCamera(camera, withDuration: 5, animationTimingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
+        // Use [MGLShape shapeWithData:encoding:error:] to create a MGLShapeCollectionFeature from GeoJSON data.
+        let feature = try! MGLShape(data: data, encoding: String.Encoding.utf8.rawValue) as! MGLShapeCollectionFeature
+        
+        // Create source and add it to the map style.
+        let source = MGLShapeSource(identifier: "transit", shape: feature, options: nil)
+        style.addSource(source)
+        
+        // Create station style layer.
+        let circleLayer = MGLCircleStyleLayer(identifier: "stations", source: source)
+        
+        // Use a predicate to filter out non-points.
+        circleLayer.predicate = NSPredicate(format: "TYPE = 'Station'")
+        circleLayer.circleColor = NSExpression(forConstantValue: NSColor.red)
+        circleLayer.circleRadius = NSExpression(forConstantValue: 6)
+        circleLayer.circleStrokeWidth = NSExpression(forConstantValue: 2)
+        circleLayer.circleStrokeColor = NSExpression(forConstantValue: NSColor.black)
+        
+        // Create line style layer.
+        let lineLayer = MGLLineStyleLayer(identifier: "rail-line", source: source)
+        
+        // Use a predicate to filter out the stations.
+        lineLayer.predicate = NSPredicate(format: "TYPE = 'Rail line'")
+        lineLayer.lineColor = NSExpression(forConstantValue: NSColor.red)
+        lineLayer.lineWidth = NSExpression(forConstantValue: 2)
+        
+        // Add style layers to the map view's style.
+        style.addLayer(circleLayer)
+        style.insertLayer(lineLayer, below: circleLayer)
     }
 }
 

@@ -14,6 +14,7 @@
 		0589F12120EC99EE00522EA8 /* trainzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589F12020EC99EE00522EA8 /* trainzTests.swift */; };
 		0589F12C20EC99EE00522EA8 /* trainzUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589F12B20EC99EE00522EA8 /* trainzUITests.swift */; };
 		0591E1AB20ED172E006F56AE /* horn.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 0591E1AA20ED172E006F56AE /* horn.aiff */; };
+		0591E1AF20ED82E4006F56AE /* metro-line.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 0591E1AE20ED82E4006F56AE /* metro-line.geojson */; };
 		85D7B3C5D975082E7060767D /* Pods_trainz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B514A29CFAC8638A99C2768A /* Pods_trainz.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		0589F12B20EC99EE00522EA8 /* trainzUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trainzUITests.swift; sourceTree = "<group>"; };
 		0589F12D20EC99EE00522EA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0591E1AA20ED172E006F56AE /* horn.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = horn.aiff; sourceTree = "<group>"; };
+		0591E1AE20ED82E4006F56AE /* metro-line.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "metro-line.geojson"; sourceTree = "<group>"; };
 		585B5F3F5997883DA7B7BFD2 /* Pods-trainz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trainz.debug.xcconfig"; path = "Pods/Target Support Files/Pods-trainz/Pods-trainz.debug.xcconfig"; sourceTree = "<group>"; };
 		7449519FA2B6882FAF6B156A /* Pods-trainz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trainz.release.xcconfig"; path = "Pods/Target Support Files/Pods-trainz/Pods-trainz.release.xcconfig"; sourceTree = "<group>"; };
 		B514A29CFAC8638A99C2768A /* Pods_trainz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trainz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +139,7 @@
 		0591E1A920ED172E006F56AE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0591E1AD20ED82D1006F56AE /* GeoJSON */,
 				0591E1AC20ED176E006F56AE /* Audio */,
 			);
 			path = Resources;
@@ -148,6 +151,14 @@
 				0591E1AA20ED172E006F56AE /* horn.aiff */,
 			);
 			path = Audio;
+			sourceTree = "<group>";
+		};
+		0591E1AD20ED82D1006F56AE /* GeoJSON */ = {
+			isa = PBXGroup;
+			children = (
+				0591E1AE20ED82E4006F56AE /* metro-line.geojson */,
+			);
+			path = GeoJSON;
 			sourceTree = "<group>";
 		};
 		61D48FE6307DA764C33243AE /* Frameworks */ = {
@@ -274,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0589F11220EC99EE00522EA8 /* Assets.xcassets in Resources */,
+				0591E1AF20ED82E4006F56AE /* metro-line.geojson in Resources */,
 				0591E1AB20ED172E006F56AE /* horn.aiff in Resources */,
 				0589F11520EC99EE00522EA8 /* Main.storyboard in Resources */,
 			);
