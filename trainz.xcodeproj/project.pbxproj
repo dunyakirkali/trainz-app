@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0589F10E20EC99EB00522EA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589F10D20EC99EB00522EA8 /* AppDelegate.swift */; };
+		0589F11020EC99EB00522EA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589F10F20EC99EB00522EA8 /* ViewController.swift */; };
+		0589F11220EC99EE00522EA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0589F11120EC99EE00522EA8 /* Assets.xcassets */; };
+		0589F11520EC99EE00522EA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0589F11320EC99EE00522EA8 /* Main.storyboard */; };
+		0589F12120EC99EE00522EA8 /* trainzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589F12020EC99EE00522EA8 /* trainzTests.swift */; };
+		0589F12C20EC99EE00522EA8 /* trainzUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589F12B20EC99EE00522EA8 /* trainzUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0589F11D20EC99EE00522EA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0589F10220EC99EB00522EA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0589F10920EC99EB00522EA8;
+			remoteInfo = trainz;
+		};
+		0589F12820EC99EE00522EA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0589F10220EC99EB00522EA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0589F10920EC99EB00522EA8;
+			remoteInfo = trainz;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0589F10A20EC99EB00522EA8 /* trainz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trainz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0589F10D20EC99EB00522EA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0589F10F20EC99EB00522EA8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0589F11120EC99EE00522EA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0589F11420EC99EE00522EA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0589F11620EC99EE00522EA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0589F11720EC99EE00522EA8 /* trainz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = trainz.entitlements; sourceTree = "<group>"; };
+		0589F11C20EC99EE00522EA8 /* trainzTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = trainzTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0589F12020EC99EE00522EA8 /* trainzTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trainzTests.swift; sourceTree = "<group>"; };
+		0589F12220EC99EE00522EA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0589F12720EC99EE00522EA8 /* trainzUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = trainzUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0589F12B20EC99EE00522EA8 /* trainzUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trainzUITests.swift; sourceTree = "<group>"; };
+		0589F12D20EC99EE00522EA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0589F10720EC99EB00522EA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0589F11920EC99EE00522EA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0589F12420EC99EE00522EA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0589F10120EC99EB00522EA8 = {
+			isa = PBXGroup;
+			children = (
+				0589F10C20EC99EB00522EA8 /* trainz */,
+				0589F11F20EC99EE00522EA8 /* trainzTests */,
+				0589F12A20EC99EE00522EA8 /* trainzUITests */,
+				0589F10B20EC99EB00522EA8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0589F10B20EC99EB00522EA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0589F10A20EC99EB00522EA8 /* trainz.app */,
+				0589F11C20EC99EE00522EA8 /* trainzTests.xctest */,
+				0589F12720EC99EE00522EA8 /* trainzUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0589F10C20EC99EB00522EA8 /* trainz */ = {
+			isa = PBXGroup;
+			children = (
+				0589F10D20EC99EB00522EA8 /* AppDelegate.swift */,
+				0589F10F20EC99EB00522EA8 /* ViewController.swift */,
+				0589F11120EC99EE00522EA8 /* Assets.xcassets */,
+				0589F11320EC99EE00522EA8 /* Main.storyboard */,
+				0589F11620EC99EE00522EA8 /* Info.plist */,
+				0589F11720EC99EE00522EA8 /* trainz.entitlements */,
+			);
+			path = trainz;
+			sourceTree = "<group>";
+		};
+		0589F11F20EC99EE00522EA8 /* trainzTests */ = {
+			isa = PBXGroup;
+			children = (
+				0589F12020EC99EE00522EA8 /* trainzTests.swift */,
+				0589F12220EC99EE00522EA8 /* Info.plist */,
+			);
+			path = trainzTests;
+			sourceTree = "<group>";
+		};
+		0589F12A20EC99EE00522EA8 /* trainzUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0589F12B20EC99EE00522EA8 /* trainzUITests.swift */,
+				0589F12D20EC99EE00522EA8 /* Info.plist */,
+			);
+			path = trainzUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0589F10920EC99EB00522EA8 /* trainz */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0589F13020EC99EE00522EA8 /* Build configuration list for PBXNativeTarget "trainz" */;
+			buildPhases = (
+				0589F10620EC99EB00522EA8 /* Sources */,
+				0589F10720EC99EB00522EA8 /* Frameworks */,
+				0589F10820EC99EB00522EA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = trainz;
+			productName = trainz;
+			productReference = 0589F10A20EC99EB00522EA8 /* trainz.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0589F11B20EC99EE00522EA8 /* trainzTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0589F13320EC99EE00522EA8 /* Build configuration list for PBXNativeTarget "trainzTests" */;
+			buildPhases = (
+				0589F11820EC99EE00522EA8 /* Sources */,
+				0589F11920EC99EE00522EA8 /* Frameworks */,
+				0589F11A20EC99EE00522EA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0589F11E20EC99EE00522EA8 /* PBXTargetDependency */,
+			);
+			name = trainzTests;
+			productName = trainzTests;
+			productReference = 0589F11C20EC99EE00522EA8 /* trainzTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0589F12620EC99EE00522EA8 /* trainzUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0589F13620EC99EE00522EA8 /* Build configuration list for PBXNativeTarget "trainzUITests" */;
+			buildPhases = (
+				0589F12320EC99EE00522EA8 /* Sources */,
+				0589F12420EC99EE00522EA8 /* Frameworks */,
+				0589F12520EC99EE00522EA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0589F12920EC99EE00522EA8 /* PBXTargetDependency */,
+			);
+			name = trainzUITests;
+			productName = trainzUITests;
+			productReference = 0589F12720EC99EE00522EA8 /* trainzUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0589F10220EC99EB00522EA8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Dunya Kirkali";
+				TargetAttributes = {
+					0589F10920EC99EB00522EA8 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					0589F11B20EC99EE00522EA8 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 0589F10920EC99EB00522EA8;
+					};
+					0589F12620EC99EE00522EA8 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 0589F10920EC99EB00522EA8;
+					};
+				};
+			};
+			buildConfigurationList = 0589F10520EC99EB00522EA8 /* Build configuration list for PBXProject "trainz" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0589F10120EC99EB00522EA8;
+			productRefGroup = 0589F10B20EC99EB00522EA8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0589F10920EC99EB00522EA8 /* trainz */,
+				0589F11B20EC99EE00522EA8 /* trainzTests */,
+				0589F12620EC99EE00522EA8 /* trainzUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0589F10820EC99EB00522EA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0589F11220EC99EE00522EA8 /* Assets.xcassets in Resources */,
+				0589F11520EC99EE00522EA8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0589F11A20EC99EE00522EA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0589F12520EC99EE00522EA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0589F10620EC99EB00522EA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0589F11020EC99EB00522EA8 /* ViewController.swift in Sources */,
+				0589F10E20EC99EB00522EA8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0589F11820EC99EE00522EA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0589F12120EC99EE00522EA8 /* trainzTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0589F12320EC99EE00522EA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0589F12C20EC99EE00522EA8 /* trainzUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0589F11E20EC99EE00522EA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0589F10920EC99EB00522EA8 /* trainz */;
+			targetProxy = 0589F11D20EC99EE00522EA8 /* PBXContainerItemProxy */;
+		};
+		0589F12920EC99EE00522EA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0589F10920EC99EB00522EA8 /* trainz */;
+			targetProxy = 0589F12820EC99EE00522EA8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0589F11320EC99EE00522EA8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0589F11420EC99EE00522EA8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0589F12E20EC99EE00522EA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0589F12F20EC99EE00522EA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		0589F13120EC99EE00522EA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = trainz/trainz.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2FBY22AJDG;
+				INFOPLIST_FILE = trainz/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.ahtung.trainz;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		0589F13220EC99EE00522EA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = trainz/trainz.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2FBY22AJDG;
+				INFOPLIST_FILE = trainz/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.ahtung.trainz;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		0589F13420EC99EE00522EA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2FBY22AJDG;
+				INFOPLIST_FILE = trainzTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.ahtung.trainzTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/trainz.app/Contents/MacOS/trainz";
+			};
+			name = Debug;
+		};
+		0589F13520EC99EE00522EA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2FBY22AJDG;
+				INFOPLIST_FILE = trainzTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.ahtung.trainzTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/trainz.app/Contents/MacOS/trainz";
+			};
+			name = Release;
+		};
+		0589F13720EC99EE00522EA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2FBY22AJDG;
+				INFOPLIST_FILE = trainzUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.ahtung.trainzUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = trainz;
+			};
+			name = Debug;
+		};
+		0589F13820EC99EE00522EA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2FBY22AJDG;
+				INFOPLIST_FILE = trainzUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.ahtung.trainzUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = trainz;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0589F10520EC99EB00522EA8 /* Build configuration list for PBXProject "trainz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0589F12E20EC99EE00522EA8 /* Debug */,
+				0589F12F20EC99EE00522EA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0589F13020EC99EE00522EA8 /* Build configuration list for PBXNativeTarget "trainz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0589F13120EC99EE00522EA8 /* Debug */,
+				0589F13220EC99EE00522EA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0589F13320EC99EE00522EA8 /* Build configuration list for PBXNativeTarget "trainzTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0589F13420EC99EE00522EA8 /* Debug */,
+				0589F13520EC99EE00522EA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0589F13620EC99EE00522EA8 /* Build configuration list for PBXNativeTarget "trainzUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0589F13720EC99EE00522EA8 /* Debug */,
+				0589F13820EC99EE00522EA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0589F10220EC99EB00522EA8 /* Project object */;
+}
