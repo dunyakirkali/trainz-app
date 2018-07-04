@@ -3,5 +3,4 @@ use_frameworks!
 inhibit_all_warnings!
 
 target 'trainz' do
-  pod "Moya"
 end

@@ -713,18 +713,86 @@
                             <mapView mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="79Y-vQ-oQT">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                             </mapView>
+                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nf7-e1-Xe6">
+                                <rect key="frame" x="366" y="233" width="96" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="Hdn-g5-zwe"/>
+                                    <constraint firstAttribute="width" constant="92" id="ewO-AA-HSn"/>
+                                </constraints>
+                                <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="nw6-Vg-Vrh"/>
+                            </slider>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="t67-kF-plB">
+                                <rect key="frame" x="401" y="211" width="61" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="57" id="J93-TU-BrC"/>
+                                    <constraint firstAttribute="height" constant="14" id="R0W-hG-a89"/>
+                                </constraints>
+                                <buttonCell key="cell" type="check" title="Follow" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Cct-l5-h3U">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rKf-vI-1qK">
+                                <rect key="frame" x="385" y="177" width="81" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="5CE-r7-dXv"/>
+                                    <constraint firstAttribute="width" constant="69" id="cxz-rv-qaj"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Horn" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eBG-dC-Khj">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="rKf-vI-1qK" firstAttribute="top" secondItem="t67-kF-plB" secondAttribute="bottom" constant="8" id="5ju-bM-YDD"/>
+                            <constraint firstItem="Nf7-e1-Xe6" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="8hg-oc-uCA"/>
+                            <constraint firstItem="t67-kF-plB" firstAttribute="top" secondItem="Nf7-e1-Xe6" secondAttribute="bottom" constant="8" id="UPo-KY-ofy"/>
+                            <constraint firstAttribute="trailing" secondItem="Nf7-e1-Xe6" secondAttribute="trailing" constant="20" id="XNt-K4-StX"/>
+                            <constraint firstAttribute="trailing" secondItem="rKf-vI-1qK" secondAttribute="trailing" constant="20" id="ZTO-7T-vEq"/>
                             <constraint firstItem="79Y-vQ-oQT" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="dF3-Bw-nam"/>
                             <constraint firstAttribute="trailing" secondItem="79Y-vQ-oQT" secondAttribute="trailing" id="fQf-7r-RGp"/>
                             <constraint firstItem="79Y-vQ-oQT" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="hCJ-h0-ifd"/>
                             <constraint firstAttribute="bottom" secondItem="79Y-vQ-oQT" secondAttribute="bottom" id="kZa-l4-Yw3"/>
+                            <constraint firstAttribute="trailing" secondItem="t67-kF-plB" secondAttribute="trailing" constant="20" id="suz-YT-k8N"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="followToggle" destination="t67-kF-plB" id="Cuj-Wg-zLG"/>
+                        <outlet property="hornButton" destination="rKf-vI-1qK" id="NMA-QT-473"/>
+                        <outlet property="mapView" destination="79Y-vQ-oQT" id="YsH-5C-0ps"/>
+                        <outlet property="speedSlider" destination="Nf7-e1-Xe6" id="NaL-zv-Afj"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="S5g-QB-SKh">
+            <objects>
+                <viewController id="ayf-Tm-Ard" sceneMemberID="viewController">
+                    <view key="view" id="WDF-Z6-Uxq">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="SKC-ZB-N0n" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1249" y="721"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="F2r-zQ-3D3">
+            <objects>
+                <viewController id="vR7-R0-GTi" sceneMemberID="viewController">
+                    <view key="view" id="owy-E1-tH5">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="47b-tw-Hmi" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1249" y="1093"/>
         </scene>
     </scenes>
 </document>
