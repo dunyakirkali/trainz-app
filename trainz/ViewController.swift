@@ -40,6 +40,7 @@ class ViewController: NSViewController {
     }
     
     private func setupSlider() {
+        speedSlider.isContinuous = true
         speedSlider.target = self
         speedSlider.action = #selector(ViewController.valueChanged(_:))
         speedSlider.doubleValue = 0.0
