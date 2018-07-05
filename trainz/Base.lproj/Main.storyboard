@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <plugIn identifier="com.apple.SceneKitIBPlugin" version="14113"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -712,30 +713,22 @@
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="6lq-cG-XRI" customClass="MGLMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                             </customView>
+                            <sceneView wantsMultisampling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mt9-aU-Ts4">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            </sceneView>
                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nf7-e1-Xe6">
-                                <rect key="frame" x="366" y="233" width="96" height="19"/>
+                                <rect key="frame" x="358" y="228" width="104" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="15" id="Hdn-g5-zwe"/>
-                                    <constraint firstAttribute="width" constant="92" id="ewO-AA-HSn"/>
+                                    <constraint firstAttribute="width" constant="100" id="VBY-xq-chg"/>
+                                    <constraint firstAttribute="height" constant="20" id="rrs-7e-fHz"/>
                                 </constraints>
                                 <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="nw6-Vg-Vrh"/>
                             </slider>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="t67-kF-plB">
-                                <rect key="frame" x="401" y="211" width="61" height="18"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="57" id="J93-TU-BrC"/>
-                                    <constraint firstAttribute="height" constant="14" id="R0W-hG-a89"/>
-                                </constraints>
-                                <buttonCell key="cell" type="check" title="Follow" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Cct-l5-h3U">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rKf-vI-1qK">
-                                <rect key="frame" x="385" y="177" width="81" height="32"/>
+                                <rect key="frame" x="354" y="167" width="112" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="5CE-r7-dXv"/>
-                                    <constraint firstAttribute="width" constant="69" id="cxz-rv-qaj"/>
+                                    <constraint firstAttribute="width" constant="100" id="Rhy-fi-kLK"/>
+                                    <constraint firstAttribute="height" constant="20" id="deD-rN-EeX"/>
                                 </constraints>
                                 <buttonCell key="cell" type="push" title="Horn" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eBG-dC-Khj">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -743,10 +736,10 @@
                                 </buttonCell>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Fzm-MG-N1U">
-                                <rect key="frame" x="358" y="156" width="104" height="20"/>
+                                <rect key="frame" x="358" y="202" width="104" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="ZMt-v4-h4m"/>
-                                    <constraint firstAttribute="width" constant="100" id="naf-gQ-dYP"/>
+                                    <constraint firstAttribute="height" constant="20" id="lw0-P5-fxP"/>
+                                    <constraint firstAttribute="width" constant="100" id="vfw-LH-J20"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="0 km/h" id="fvA-SB-Ra8">
                                     <font key="font" metaFont="system"/>
@@ -754,33 +747,49 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="t67-kF-plB">
+                                <rect key="frame" x="358" y="144" width="104" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="4pN-sr-AKY"/>
+                                    <constraint firstAttribute="height" constant="20" id="Ogx-u6-XcR"/>
+                                </constraints>
+                                <buttonCell key="cell" type="check" title="Follow" bezelStyle="regularSquare" imagePosition="left" alignment="right" state="on" inset="2" id="Cct-l5-h3U">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="6lq-cG-XRI" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="0h8-Ub-moS"/>
-                            <constraint firstItem="rKf-vI-1qK" firstAttribute="top" secondItem="t67-kF-plB" secondAttribute="bottom" constant="8" id="5ju-bM-YDD"/>
-                            <constraint firstItem="Nf7-e1-Xe6" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="8hg-oc-uCA"/>
+                            <constraint firstItem="rKf-vI-1qK" firstAttribute="top" secondItem="Fzm-MG-N1U" secondAttribute="bottom" constant="8" id="1Jf-Rr-a5Q"/>
+                            <constraint firstAttribute="trailing" secondItem="rKf-vI-1qK" secondAttribute="trailing" constant="20" id="2gD-Xe-nDw"/>
+                            <constraint firstAttribute="trailing" secondItem="Fzm-MG-N1U" secondAttribute="trailing" constant="20" id="3XG-Zv-ENl"/>
+                            <constraint firstAttribute="trailing" secondItem="t67-kF-plB" secondAttribute="trailing" constant="20" id="BjH-sF-eWJ"/>
+                            <constraint firstItem="Nf7-e1-Xe6" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="Dox-Tp-CJF"/>
                             <constraint firstAttribute="trailing" secondItem="6lq-cG-XRI" secondAttribute="trailing" id="Hhz-q5-uxq"/>
+                            <constraint firstAttribute="bottom" secondItem="Mt9-aU-Ts4" secondAttribute="bottom" id="Kle-4p-u5t"/>
                             <constraint firstAttribute="bottom" secondItem="6lq-cG-XRI" secondAttribute="bottom" id="Ojk-cp-IkB"/>
-                            <constraint firstItem="t67-kF-plB" firstAttribute="top" secondItem="Nf7-e1-Xe6" secondAttribute="bottom" constant="8" id="UPo-KY-ofy"/>
-                            <constraint firstAttribute="trailing" secondItem="Nf7-e1-Xe6" secondAttribute="trailing" constant="20" id="XNt-K4-StX"/>
-                            <constraint firstAttribute="trailing" secondItem="rKf-vI-1qK" secondAttribute="trailing" constant="20" id="ZTO-7T-vEq"/>
-                            <constraint firstAttribute="trailing" secondItem="Fzm-MG-N1U" secondAttribute="trailing" constant="20" id="dt6-Nf-B1L"/>
+                            <constraint firstItem="Mt9-aU-Ts4" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="SLI-nf-tzH"/>
+                            <constraint firstAttribute="trailing" secondItem="Mt9-aU-Ts4" secondAttribute="trailing" id="UnV-1u-ps2"/>
+                            <constraint firstItem="Fzm-MG-N1U" firstAttribute="top" secondItem="Nf7-e1-Xe6" secondAttribute="bottom" constant="8" id="cF9-Bd-Hhy"/>
                             <constraint firstItem="6lq-cG-XRI" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="l7c-nW-QpN"/>
-                            <constraint firstAttribute="trailing" secondItem="t67-kF-plB" secondAttribute="trailing" constant="20" id="suz-YT-k8N"/>
-                            <constraint firstItem="Fzm-MG-N1U" firstAttribute="top" secondItem="rKf-vI-1qK" secondAttribute="bottom" constant="8" id="zEY-ug-uay"/>
+                            <constraint firstAttribute="trailing" secondItem="Nf7-e1-Xe6" secondAttribute="trailing" constant="20" id="sxA-pC-jTu"/>
+                            <constraint firstItem="Mt9-aU-Ts4" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="u6b-zm-OgA"/>
+                            <constraint firstItem="t67-kF-plB" firstAttribute="top" secondItem="rKf-vI-1qK" secondAttribute="bottom" constant="8" id="zMw-p5-DMc"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="followToggle" destination="t67-kF-plB" id="Cuj-Wg-zLG"/>
                         <outlet property="hornButton" destination="rKf-vI-1qK" id="NMA-QT-473"/>
                         <outlet property="mapView" destination="6lq-cG-XRI" id="nEE-0f-TDV"/>
+                        <outlet property="sceneView" destination="Mt9-aU-Ts4" id="mgf-tn-0Ky"/>
                         <outlet property="speedLabel" destination="Fzm-MG-N1U" id="moO-4j-cDF"/>
                         <outlet property="speedSlider" destination="Nf7-e1-Xe6" id="NaL-zv-Afj"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="654.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="S5g-QB-SKh">

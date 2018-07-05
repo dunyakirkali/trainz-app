@@ -8,15 +8,24 @@
 
 import Cocoa
 import Mapbox
+import SceneKit
 
 class ViewController: NSViewController {
+    
+    // the pitch to use for the map view
+    let kMapPitchDegrees: Float = 45.0
 
     let topSpeed: Double = 500 // kmph
+    
+    // SceneKit scene
+    var scene: SCNScene!
+    var playerNode: SCNNode!
 
     @IBOutlet weak var speedLabel: NSTextField!
     @IBOutlet weak var hornButton: NSButton!
     @IBOutlet weak var followToggle: NSButton!
     @IBOutlet weak var mapView: MGLMapView!
+    @IBOutlet weak var sceneView: SCNView!
     @IBOutlet weak var speedSlider: NSSlider!
 
     override func viewDidLoad() {
@@ -26,6 +35,7 @@ class ViewController: NSViewController {
         setupSlider()
         setupToggle()
         setupHorn()
+        setupSceneView()
     }
 
     override var representedObject: Any? {
@@ -33,8 +43,40 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
+    
+    private func setupSceneView() {
+        // transparent background for use as overlay
+        sceneView.backgroundColor = NSColor.clear
+        scene = SCNScene()
+        sceneView.autoenablesDefaultLighting = true
+        sceneView.scene = scene
+        sceneView.delegate = self
+        sceneView.loops = true
+        sceneView.isPlaying = true
+        
+        playerNode = SCNNode()
+        let playerScene = SCNScene(named: "classy_crab.stl")!
+        let playerModelNode = playerScene.rootNode.childNodes.first!
+        playerNode.addChildNode(playerModelNode)
+        scene.rootNode.addChildNode(playerNode)
+        
+        let ambientLightNode = SCNNode()
+        ambientLightNode.light = SCNLight()
+        ambientLightNode.light!.type = SCNLight.LightType.ambient
+        ambientLightNode.light!.color = NSColor(white: 0.67, alpha: 1.0)
+        scene.rootNode.addChildNode(ambientLightNode)
+        
+        let cameraNode = SCNNode()
+        cameraNode.camera = SCNCamera()
+        cameraNode.position = SCNVector3Make(0, 0, 35)
+        scene.rootNode.addChildNode(cameraNode)
+    }
 
     private func setupMapView() {
+        let camera = MGLMapCamera()
+        camera.pitch = CGFloat(kMapPitchDegrees)
+        mapView.setCamera(camera, animated: false)
+        
         mapView.delegate = self
         mapView.setCenter(CLLocationCoordinate2D(latitude:38.897435, longitude: -77.039679), animated: false)
     }
@@ -103,6 +145,28 @@ extension ViewController: MGLMapViewDelegate {
         // Add style layers to the map view's style.
         style.addLayer(circleLayer)
         style.insertLayer(lineLayer, below: circleLayer)
+    }
+}
+
+extension ViewController: SCNSceneRendererDelegate {
+    func coordinateToOverlayPosition(coordinate: CLLocationCoordinate2D) -> SCNVector3 {
+        let p: CGPoint = mapView.convert(coordinate, toPointTo: mapView)
+        return SCNVector3Make(p.x, sceneView.bounds.size.height - p.y, 0)
+    }
+    
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+//        // get pitch of map
+//        let mapPitchRads: CGFloat = mapView.camera.pitch * CGFloat(Float.pi) / 180.0
+//
+//        let playerPoint = coordinateToOverlayPosition(coordinate: mapView.centerCoordinate)
+//        let scaleMat = SCNMatrix4MakeScale(10.0, 10.0, 10.0)
+//        playerNode.transform = SCNMatrix4Mult(
+//            scaleMat,
+//            SCNMatrix4Mult(
+//                SCNMatrix4MakeRotation(-mapPitchRads, 1, 0, 0),
+//                SCNMatrix4MakeTranslation(playerPoint.x, playerPoint.y, 0)
+//            )
+//        )
     }
 }
 
