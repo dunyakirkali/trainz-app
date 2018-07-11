@@ -14,7 +14,7 @@ import Turf
 class ViewController: NSViewController {
     
     /// The pitch to use for the map view
-    let kMapPitchDegrees: Float = 45.0
+    let kMapPitchDegrees: Float = 0.0
     
     var timer: Timer?
     var i = 0
@@ -28,6 +28,9 @@ class ViewController: NSViewController {
     /// SceneKit scene
     var scene: SCNScene!
     var playerNode: SCNNode!
+    
+    /// The track
+    var coordinates = [CLLocationCoordinate2D]()
 
     @IBOutlet weak var speedLabel: NSTextField!
     @IBOutlet weak var hornButton: NSButton!
@@ -113,15 +116,9 @@ extension ViewController {
     @objc func tick() {
         // EXP
         i += 1
-        let line = [
-            CLLocationCoordinate2D(latitude: 51, longitude: 0),
-            CLLocationCoordinate2D(latitude: 51, longitude: 0.01),
-            CLLocationCoordinate2D(latitude: 51.01, longitude: 0.01),
-            CLLocationCoordinate2D(latitude: 51, longitude: 0),
-        ]
-        let dist = LineString(line).distance() // Meters
+        let dist = LineString(coordinates).distance() // Meters
         let offset = (currentSpeed * Double(i)).truncatingRemainder(dividingBy: dist)
-        let point = LineString(line).coordinateFromStart(distance: offset)
+        let point = LineString(coordinates).coordinateFromStart(distance: offset)
         if let point = point {
             let camera = MGLMapCamera(lookingAtCenter: point, fromDistance: 1000, pitch: CGFloat(kMapPitchDegrees), heading: mapView.camera.heading)
             
@@ -152,6 +149,11 @@ extension ViewController: MGLMapViewDelegate {
         
         // Use [MGLShape shapeWithData:encoding:error:] to create a MGLShapeCollectionFeature from GeoJSON data.
         let feature = try! MGLShape(data: data, encoding: String.Encoding.utf8.rawValue) as! MGLShapeCollectionFeature
+        
+    
+        if let polyline = feature.shapes.last as? MGLPolylineFeature {
+            coordinates = Array(UnsafeBufferPointer(start: polyline.coordinates, count: Int(polyline.pointCount)))
+        }
         
         // Create source and add it to the map style.
         let source = MGLShapeSource(identifier: "transit", shape: feature, options: nil)
