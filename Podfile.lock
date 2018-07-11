@@ -1,16 +1,20 @@
 PODS:
   - Mapbox-macOS-SDK (0.8.0)
+  - Turf (0.2.0)
 
 DEPENDENCIES:
   - Mapbox-macOS-SDK
+  - Turf (~> 0.2)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Mapbox-macOS-SDK
+    - Turf
 
 SPEC CHECKSUMS:
   Mapbox-macOS-SDK: 0bf8ec089d10716a77f7073585076b8710ad751e
+  Turf: 65817136031583da7ea2b43e6611dd10ddbdab2f
 
-PODFILE CHECKSUM: bb89d796fb56f576b9d762fc95c1b03c3530a8c3
+PODFILE CHECKSUM: 02c3e7fd6460201ab616fcfa23d42d9a9b915050
 
 COCOAPODS: 1.5.3

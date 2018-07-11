@@ -9,15 +9,23 @@
 import Cocoa
 import Mapbox
 import SceneKit
+import Turf
 
 class ViewController: NSViewController {
     
-    // the pitch to use for the map view
+    /// The pitch to use for the map view
     let kMapPitchDegrees: Float = 45.0
+    
+    var timer: Timer?
+    var i = 0
 
+    /// Top speed for a train
     let topSpeed: Double = 500 // kmph
     
-    // SceneKit scene
+    /// Frames per second
+    let fps: Int = 60
+    
+    /// SceneKit scene
     var scene: SCNScene!
     var playerNode: SCNNode!
 
@@ -36,6 +44,8 @@ class ViewController: NSViewController {
         setupToggle()
         setupHorn()
         setupSceneView()
+        
+        timer = Timer.scheduledTimer(timeInterval: TimeInterval(1 / fps), target: self, selector: #selector(tick), userInfo: nil, repeats: true)
     }
 
     override var representedObject: Any? {
@@ -96,6 +106,29 @@ class ViewController: NSViewController {
     private func setupHorn() {
         hornButton.target = self
         hornButton.action = #selector(ViewController.hornTriggered(_:))
+    }
+}
+
+extension ViewController {
+    @objc func tick() {
+        // EXP
+        i += 1
+        let line = [
+            CLLocationCoordinate2D(latitude: 51, longitude: 0),
+            CLLocationCoordinate2D(latitude: 51, longitude: 0.01),
+            CLLocationCoordinate2D(latitude: 51.01, longitude: 0.01),
+            CLLocationCoordinate2D(latitude: 51, longitude: 0),
+        ]
+        let dist = LineString(line).distance() // Meters
+        let offset = (currentSpeed * Double(i)).truncatingRemainder(dividingBy: dist)
+        let point = LineString(line).coordinateFromStart(distance: offset)
+        if let point = point {
+            let camera = MGLMapCamera(lookingAtCenter: point, fromDistance: 1000, pitch: CGFloat(kMapPitchDegrees), heading: mapView.camera.heading)
+            
+//            mapView.setCamera(camera, withDuration: TimeInterval(1 / fps), animationTimingFunction: nil, completionHandler: nil)
+            
+            mapView.setCamera(camera, animated: false)
+        }
     }
 }
 
@@ -178,6 +211,11 @@ extension ViewController {
 
     private func scale(speed: Double) -> Int {
         return Int(speed / 100.0 * topSpeed)
+    }
+    
+    var currentSpeed: Double {
+        let scaledValue: Int = scale(speed: speedSlider.doubleValue)
+        return Double(scaledValue) * 1000.0 / 60.0 / 60.0 / Double(fps)
     }
 }
 
