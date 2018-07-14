@@ -13,14 +13,14 @@ import Turf
 
 class ViewController: NSViewController {
     
+    /// Train
+    let train: Train = Train()
+    
     /// The pitch to use for the map view
     let kMapPitchDegrees: Float = 0.0
     
     var timer: Timer?
     var i = 0
-
-    /// Top speed for a train
-    let topSpeed: Double = 500 // kmph
     
     /// Frames per second
     let fps: Int = 60
@@ -51,12 +51,6 @@ class ViewController: NSViewController {
         timer = Timer.scheduledTimer(timeInterval: TimeInterval(1 / fps), target: self, selector: #selector(tick), userInfo: nil, repeats: true)
     }
 
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-    
     private func setupSceneView() {
         // transparent background for use as overlay
         sceneView.backgroundColor = NSColor.clear
@@ -212,7 +206,7 @@ extension ViewController {
     }
 
     private func scale(speed: Double) -> Int {
-        return Int(speed / 100.0 * topSpeed)
+        return Int(speed / 100.0 * Train.topSpeed.value)
     }
     
     var currentSpeed: Double {

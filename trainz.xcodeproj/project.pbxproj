@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0542ACDE20EEB5C90076711C /* classy_crab.stl in Resources */ = {isa = PBXBuildFile; fileRef = 0542ACDD20EEB5C90076711C /* classy_crab.stl */; };
+		0560D18320FA973E00A600C2 /* Train.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0560D18220FA973E00A600C2 /* Train.swift */; };
+		0560D18520FA989A00A600C2 /* TrainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0560D18420FA989A00A600C2 /* TrainTests.swift */; };
 		0589F10E20EC99EB00522EA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589F10D20EC99EB00522EA8 /* AppDelegate.swift */; };
 		0589F11020EC99EB00522EA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589F10F20EC99EB00522EA8 /* ViewController.swift */; };
 		0589F11220EC99EE00522EA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0589F11120EC99EE00522EA8 /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		0542ACDD20EEB5C90076711C /* classy_crab.stl */ = {isa = PBXFileReference; lastKnownFileType = file; path = classy_crab.stl; sourceTree = "<group>"; };
+		0560D18220FA973E00A600C2 /* Train.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Train.swift; sourceTree = "<group>"; };
+		0560D18420FA989A00A600C2 /* TrainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainTests.swift; sourceTree = "<group>"; };
 		0589F10A20EC99EB00522EA8 /* trainz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trainz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0589F10D20EC99EB00522EA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0589F10F20EC99EB00522EA8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 				0589F11320EC99EE00522EA8 /* Main.storyboard */,
 				0589F11620EC99EE00522EA8 /* Info.plist */,
 				0589F11720EC99EE00522EA8 /* trainz.entitlements */,
+				0560D18220FA973E00A600C2 /* Train.swift */,
 			);
 			path = trainz;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 		0589F11F20EC99EE00522EA8 /* trainzTests */ = {
 			isa = PBXGroup;
 			children = (
+				0560D18420FA989A00A600C2 /* TrainTests.swift */,
 				0589F12020EC99EE00522EA8 /* trainzTests.swift */,
 				0589F12220EC99EE00522EA8 /* Info.plist */,
 			);
@@ -368,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0589F11020EC99EB00522EA8 /* ViewController.swift in Sources */,
+				0560D18320FA973E00A600C2 /* Train.swift in Sources */,
 				0589F10E20EC99EB00522EA8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0560D18520FA989A00A600C2 /* TrainTests.swift in Sources */,
 				0589F12120EC99EE00522EA8 /* trainzTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
