@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 class Train {
     /// Top speed for a train
@@ -14,4 +15,11 @@ class Train {
     
     /// Speed in km/h
     var speed: Measurement<UnitSpeed> = Measurement<UnitSpeed>(value: 0, unit: .kilometersPerHour)
+    
+    /// Location as CLLocationCoordinate2D
+    var location: CLLocationCoordinate2D
+    
+    init(location: CLLocationCoordinate2D) {
+        self.location = location
+    }
 }

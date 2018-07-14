@@ -14,7 +14,7 @@ import Turf
 class ViewController: NSViewController {
     
     /// Train
-    let train: Train = Train()
+    let train: Train = Train(location: CLLocationCoordinate2D(latitude: 0, longitude: 0))
     
     /// The pitch to use for the map view
     let kMapPitchDegrees: Float = 0.0

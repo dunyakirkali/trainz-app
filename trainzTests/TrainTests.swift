@@ -7,12 +7,14 @@
 //
 
 import XCTest
+import CoreLocation
 @testable import trainz
 
 class TrainTests: XCTestCase {
+    let location = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     
     func testInitialSpeedIsZero() {
-        let train = Train()
+        let train = Train(location: location)
         let expected = Measurement<UnitSpeed>(value: 0, unit: .kilometersPerHour)
         
         XCTAssert(train.speed == expected)
