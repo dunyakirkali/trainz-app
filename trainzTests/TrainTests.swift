@@ -26,4 +26,3 @@ class TrainTests: XCTestCase {
         XCTAssert(Train.topSpeed == expected)
     }
 }
-

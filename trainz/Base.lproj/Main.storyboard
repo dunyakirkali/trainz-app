@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
-        <plugIn identifier="com.apple.SceneKitIBPlugin" version="14113"/>
+        <plugIn identifier="com.apple.MapKitIBPlugin" version="14113"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
@@ -711,12 +711,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="6lq-cG-XRI" customClass="MGLMapView">
+                            <mapView mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JUP-lS-tyH">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                            </customView>
-                            <sceneView wantsMultisampling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mt9-aU-Ts4">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                            </sceneView>
+                            </mapView>
                             <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="10" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X59-Pm-okC">
                                 <rect key="frame" x="380" y="109" width="100" height="161"/>
                                 <subviews>
@@ -753,7 +750,7 @@
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rKf-vI-1qK">
+                                    <button horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rKf-vI-1qK">
                                         <rect key="frame" x="14" y="23" width="72" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="deD-rN-EeX"/>
@@ -763,7 +760,7 @@
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                     </button>
-                                    <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t67-kF-plB">
+                                    <button horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="t67-kF-plB">
                                         <rect key="frame" x="18" y="-2" width="64" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="Ogx-u6-XcR"/>
@@ -792,24 +789,19 @@
                             </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="6lq-cG-XRI" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="0h8-Ub-moS"/>
-                            <constraint firstAttribute="trailing" secondItem="6lq-cG-XRI" secondAttribute="trailing" id="Hhz-q5-uxq"/>
-                            <constraint firstAttribute="bottom" secondItem="Mt9-aU-Ts4" secondAttribute="bottom" id="Kle-4p-u5t"/>
-                            <constraint firstAttribute="bottom" secondItem="6lq-cG-XRI" secondAttribute="bottom" id="Ojk-cp-IkB"/>
+                            <constraint firstItem="JUP-lS-tyH" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="Bnt-qK-KvW"/>
+                            <constraint firstAttribute="trailing" secondItem="JUP-lS-tyH" secondAttribute="trailing" id="HBT-UL-Arx"/>
                             <constraint firstItem="X59-Pm-okC" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="R1u-ML-ha9"/>
-                            <constraint firstItem="Mt9-aU-Ts4" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="SLI-nf-tzH"/>
-                            <constraint firstAttribute="trailing" secondItem="Mt9-aU-Ts4" secondAttribute="trailing" id="UnV-1u-ps2"/>
+                            <constraint firstItem="JUP-lS-tyH" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="Sii-jt-qvC"/>
                             <constraint firstAttribute="trailing" secondItem="X59-Pm-okC" secondAttribute="trailing" id="YAI-L5-0sf"/>
-                            <constraint firstItem="6lq-cG-XRI" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="l7c-nW-QpN"/>
-                            <constraint firstItem="Mt9-aU-Ts4" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="u6b-zm-OgA"/>
+                            <constraint firstAttribute="bottom" secondItem="JUP-lS-tyH" secondAttribute="bottom" id="fJ1-JX-KS8"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="countrySelector" destination="Zeg-2h-lMc" id="dKT-kc-u24"/>
                         <outlet property="followToggle" destination="t67-kF-plB" id="Cuj-Wg-zLG"/>
                         <outlet property="hornButton" destination="rKf-vI-1qK" id="NMA-QT-473"/>
-                        <outlet property="mapView" destination="6lq-cG-XRI" id="nEE-0f-TDV"/>
-                        <outlet property="sceneView" destination="Mt9-aU-Ts4" id="mgf-tn-0Ky"/>
+                        <outlet property="mapView" destination="JUP-lS-tyH" id="zge-Lu-3yK"/>
                         <outlet property="speedLabel" destination="Fzm-MG-N1U" id="moO-4j-cDF"/>
                         <outlet property="speedSlider" destination="Nf7-e1-Xe6" id="NaL-zv-Afj"/>
                     </connections>

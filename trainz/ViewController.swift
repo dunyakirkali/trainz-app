@@ -7,7 +7,8 @@
 //
 
 import Cocoa
-import Mapbox
+import CoreLocation
+import MapKit
 import SceneKit
 import Turf
 
@@ -38,7 +39,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var speedLabel: NSTextField!
     @IBOutlet weak var hornButton: NSButton!
     @IBOutlet weak var followToggle: NSButton!
-    @IBOutlet weak var mapView: MGLMapView!
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var sceneView: SCNView!
     @IBOutlet weak var speedSlider: NSSlider!
     @IBOutlet weak var countrySelector: NSPopUpButton!
@@ -53,7 +54,7 @@ class ViewController: NSViewController {
         setupCountrySelector()
 //        setupSceneView()
         
-        timer = Timer.scheduledTimer(timeInterval: TimeInterval(1 / fps), target: self, selector: #selector(tick), userInfo: nil, repeats: true)
+//        timer = Timer.scheduledTimer(timeInterval: TimeInterval(1 / fps), target: self, selector: #selector(tick), userInfo: nil, repeats: true)
     }
 
     private func setupSceneView() {
@@ -85,12 +86,20 @@ class ViewController: NSViewController {
     }
 
     private func setupMapView() {
-        let camera = MGLMapCamera()
-        camera.pitch = CGFloat(kMapPitchDegrees)
-        mapView.setCamera(camera, animated: false)
-        
-        mapView.delegate = self
-        mapView.setCenter(CLLocationCoordinate2D(latitude:38.897435, longitude: -77.039679), animated: false)
+//        let camera = MGLMapCamera()
+//        camera.pitch = CGFloat(kMapPitchDegrees)
+//        mapView.setCamera(camera, animated: false)
+//
+//        mapView.delegate = self
+//        mapView.setCenter(CLLocationCoordinate2D(latitude:38.897435, longitude: -77.039679), animated: false)
+//
+//        mapView.styleURL = MGLStyle.outdoorsStyleURL
+//
+//        // Mauna Kea, Hawaii
+//        let center = CLLocationCoordinate2D(latitude: 19.820689, longitude: -155.468038)
+//
+//        // Optionally set a starting point.
+//        mapView.setCenter(center, animated: true)
     }
     
     private func setupSlider() {
@@ -119,82 +128,82 @@ class ViewController: NSViewController {
     }
 }
 
-extension ViewController {
-    @objc func tick() {
-        // EXP
-        i += 1
-        let dist = LineString(coordinates).distance() // Meters
-        let offset = (currentSpeed * Double(i)).truncatingRemainder(dividingBy: dist)
-        let point = LineString(coordinates).coordinateFromStart(distance: offset)
-        if let point = point {
-            let camera = MGLMapCamera(lookingAtCenter: point, fromDistance: 1000, pitch: CGFloat(kMapPitchDegrees), heading: mapView.camera.heading)
-            
-//            mapView.setCamera(camera, withDuration: TimeInterval(1 / fps), animationTimingFunction: nil, completionHandler: nil)
-            
-            mapView.setCamera(camera, animated: false)
-        }
-    }
-}
-
-extension ViewController: MGLMapViewDelegate {
-    func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
-        
-        // Parse the GeoJSON data.
-//        DispatchQueue.global().async {
-            guard let url = Bundle.main.url(forResource: "metro-line", withExtension: "geojson") else { return }
-            
-            let data = try! Data(contentsOf: url)
-            
-            DispatchQueue.main.async {
-                self.drawShapeCollection(data: data)
-            }
+//extension ViewController {
+//    @objc func tick() {
+//        // EXP
+//        i += 1
+//        let dist = LineString(coordinates).distance() // Meters
+//        let offset = (currentSpeed * Double(i)).truncatingRemainder(dividingBy: dist)
+//        let point = LineString(coordinates).coordinateFromStart(distance: offset)
+//        if let point = point {
+//            let camera = MGLMapCamera(lookingAtCenter: point, fromDistance: 1000, pitch: CGFloat(kMapPitchDegrees), heading: mapView.camera.heading)
+//
+////            mapView.setCamera(camera, withDuration: TimeInterval(1 / fps), animationTimingFunction: nil, completionHandler: nil)
+//
+//            mapView.setCamera(camera, animated: false)
 //        }
-    }
-    
-    func drawShapeCollection(data: Data) {
-        guard let style = self.mapView.style else { return }
-        
-        // Use [MGLShape shapeWithData:encoding:error:] to create a MGLShapeCollectionFeature from GeoJSON data.
-        let feature = try! MGLShape(data: data, encoding: String.Encoding.utf8.rawValue) as! MGLShapeCollectionFeature
-        
-    
-        if let polyline = feature.shapes.last as? MGLPolylineFeature {
-            coordinates = Array(UnsafeBufferPointer(start: polyline.coordinates, count: Int(polyline.pointCount)))
-        }
-        
-        // Create source and add it to the map style.
-        let source = MGLShapeSource(identifier: "transit", shape: feature, options: nil)
-        style.addSource(source)
-        
-        // Create station style layer.
-        let circleLayer = MGLCircleStyleLayer(identifier: "stations", source: source)
-        
-        // Use a predicate to filter out non-points.
-        circleLayer.predicate = NSPredicate(format: "TYPE = 'Station'")
-        circleLayer.circleColor = NSExpression(forConstantValue: NSColor.red)
-        circleLayer.circleRadius = NSExpression(forConstantValue: 6)
-        circleLayer.circleStrokeWidth = NSExpression(forConstantValue: 2)
-        circleLayer.circleStrokeColor = NSExpression(forConstantValue: NSColor.black)
-        
-        // Create line style layer.
-        let lineLayer = MGLLineStyleLayer(identifier: "rail-line", source: source)
-        
-        // Use a predicate to filter out the stations.
-        lineLayer.predicate = NSPredicate(format: "TYPE = 'Rail line'")
-        lineLayer.lineColor = NSExpression(forConstantValue: NSColor.red)
-        lineLayer.lineWidth = NSExpression(forConstantValue: 2)
-        
-        // Add style layers to the map view's style.
-        style.addLayer(circleLayer)
-        style.insertLayer(lineLayer, below: circleLayer)
-    }
-}
+//    }
+//}
+
+//extension ViewController: MGLMapViewDelegate {
+//    func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
+//
+//        // Parse the GeoJSON data.
+////        DispatchQueue.global().async {
+//            guard let url = Bundle.main.url(forResource: "metro-line", withExtension: "geojson") else { return }
+//
+//            let data = try! Data(contentsOf: url)
+//
+//            DispatchQueue.main.async {
+//                self.drawShapeCollection(data: data)
+//            }
+////        }
+//    }
+//
+//    func drawShapeCollection(data: Data) {
+//        guard let style = self.mapView.style else { return }
+//
+//        // Use [MGLShape shapeWithData:encoding:error:] to create a MGLShapeCollectionFeature from GeoJSON data.
+//        let feature = try! MGLShape(data: data, encoding: String.Encoding.utf8.rawValue) as! MGLShapeCollectionFeature
+//
+//
+//        if let polyline = feature.shapes.last as? MGLPolylineFeature {
+//            coordinates = Array(UnsafeBufferPointer(start: polyline.coordinates, count: Int(polyline.pointCount)))
+//        }
+//
+//        // Create source and add it to the map style.
+//        let source = MGLShapeSource(identifier: "transit", shape: feature, options: nil)
+//        style.addSource(source)
+//
+//        // Create station style layer.
+//        let circleLayer = MGLCircleStyleLayer(identifier: "stations", source: source)
+//
+//        // Use a predicate to filter out non-points.
+//        circleLayer.predicate = NSPredicate(format: "TYPE = 'Station'")
+//        circleLayer.circleColor = NSExpression(forConstantValue: NSColor.red)
+//        circleLayer.circleRadius = NSExpression(forConstantValue: 6)
+//        circleLayer.circleStrokeWidth = NSExpression(forConstantValue: 2)
+//        circleLayer.circleStrokeColor = NSExpression(forConstantValue: NSColor.black)
+//
+//        // Create line style layer.
+//        let lineLayer = MGLLineStyleLayer(identifier: "rail-line", source: source)
+//
+//        // Use a predicate to filter out the stations.
+//        lineLayer.predicate = NSPredicate(format: "TYPE = 'Rail line'")
+//        lineLayer.lineColor = NSExpression(forConstantValue: NSColor.red)
+//        lineLayer.lineWidth = NSExpression(forConstantValue: 2)
+//
+//        // Add style layers to the map view's style.
+//        style.addLayer(circleLayer)
+//        style.insertLayer(lineLayer, below: circleLayer)
+//    }
+//}
 
 extension ViewController: SCNSceneRendererDelegate {
-    func coordinateToOverlayPosition(coordinate: CLLocationCoordinate2D) -> SCNVector3 {
-        let p: CGPoint = mapView.convert(coordinate, toPointTo: mapView)
-        return SCNVector3Make(p.x, sceneView.bounds.size.height - p.y, 0)
-    }
+//    func coordinateToOverlayPosition(coordinate: CLLocationCoordinate2D) -> SCNVector3 {
+//        let p: CGPoint = mapView.convert(coordinate, toPointTo: mapView)
+//        return SCNVector3Make(p.x, sceneView.bounds.size.height - p.y, 0)
+//    }
     
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
 //        // get pitch of map
@@ -242,6 +251,13 @@ extension ViewController {
 
 extension ViewController {
     @objc func countrySelected(_ sender: NSPopUpButton) {
-        print(sender.selectedItem?.title)
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString((sender.selectedItem?.title)!) { [weak self] response, error in
+            guard let region = response?.first?.region as? CLCircularRegion else {
+                return
+            }
+            let mkregion = MKCoordinateRegionMakeWithDistance(region.center, region.radius*2, region.radius*2)
+            self?.mapView.setRegion(mkregion, animated: true)
+        }
     }
 }
