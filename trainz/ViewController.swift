@@ -17,7 +17,7 @@ class ViewController: NSViewController {
     let train: Train = Train(location: CLLocationCoordinate2D(latitude: 0, longitude: 0))
     
     /// The pitch to use for the map view
-    let kMapPitchDegrees: Float = 0.0
+    let kMapPitchDegrees: Float = 45.0
     
     var timer: Timer?
     var i = 0
@@ -31,6 +31,9 @@ class ViewController: NSViewController {
     
     /// The track
     var coordinates = [CLLocationCoordinate2D]()
+    
+    /// List of Countries
+    let countries = ["Netherlands", "Belgium"]
 
     @IBOutlet weak var speedLabel: NSTextField!
     @IBOutlet weak var hornButton: NSButton!
@@ -38,7 +41,8 @@ class ViewController: NSViewController {
     @IBOutlet weak var mapView: MGLMapView!
     @IBOutlet weak var sceneView: SCNView!
     @IBOutlet weak var speedSlider: NSSlider!
-
+    @IBOutlet weak var countrySelector: NSPopUpButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,7 +50,8 @@ class ViewController: NSViewController {
         setupSlider()
         setupToggle()
         setupHorn()
-        setupSceneView()
+        setupCountrySelector()
+//        setupSceneView()
         
         timer = Timer.scheduledTimer(timeInterval: TimeInterval(1 / fps), target: self, selector: #selector(tick), userInfo: nil, repeats: true)
     }
@@ -103,6 +108,14 @@ class ViewController: NSViewController {
     private func setupHorn() {
         hornButton.target = self
         hornButton.action = #selector(ViewController.hornTriggered(_:))
+    }
+    
+    private func setupCountrySelector() {
+        countrySelector.removeAllItems()
+        
+        countrySelector.addItems(withTitles: countries)
+        countrySelector.target = self
+        countrySelector.action = #selector(ViewController.countrySelected(_:))
     }
 }
 
@@ -224,5 +237,11 @@ extension ViewController {
 extension ViewController {
     @objc func hornTriggered(_ sender: NSButton) {
         NSSound.beep()
+    }
+}
+
+extension ViewController {
+    @objc func countrySelected(_ sender: NSPopUpButton) {
+        print(sender.selectedItem?.title)
     }
 }
