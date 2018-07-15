@@ -10,6 +10,8 @@
 		0542ACDE20EEB5C90076711C /* classy_crab.stl in Resources */ = {isa = PBXBuildFile; fileRef = 0542ACDD20EEB5C90076711C /* classy_crab.stl */; };
 		0560D18320FA973E00A600C2 /* Train.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0560D18220FA973E00A600C2 /* Train.swift */; };
 		0560D18520FA989A00A600C2 /* TrainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0560D18420FA989A00A600C2 /* TrainTests.swift */; };
+		0586317420FBDFD40001748F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0586317320FBDFD40001748F /* MapKit.framework */; };
+		0586317620FBE4930001748F /* EntranceToGoliathRoute.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0586317520FBE4920001748F /* EntranceToGoliathRoute.plist */; };
 		0589F10E20EC99EB00522EA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589F10D20EC99EB00522EA8 /* AppDelegate.swift */; };
 		0589F11020EC99EB00522EA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589F10F20EC99EB00522EA8 /* ViewController.swift */; };
 		0589F11220EC99EE00522EA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0589F11120EC99EE00522EA8 /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 		0560D18220FA973E00A600C2 /* Train.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Train.swift; sourceTree = "<group>"; };
 		0560D18420FA989A00A600C2 /* TrainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainTests.swift; sourceTree = "<group>"; };
 		0560D18620FA9E1C00A600C2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0586317320FBDFD40001748F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0586317520FBE4920001748F /* EntranceToGoliathRoute.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EntranceToGoliathRoute.plist; sourceTree = "<group>"; };
 		0589F10A20EC99EB00522EA8 /* trainz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trainz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0589F10D20EC99EB00522EA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0589F10F20EC99EB00522EA8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0586317420FBDFD40001748F /* MapKit.framework in Frameworks */,
 				85D7B3C5D975082E7060767D /* Pods_trainz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +158,7 @@
 		0591E1A920ED172E006F56AE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0586317520FBE4920001748F /* EntranceToGoliathRoute.plist */,
 				0542ACDC20EEB5B40076711C /* Models */,
 				0591E1AD20ED82D1006F56AE /* GeoJSON */,
 				0591E1AC20ED176E006F56AE /* Audio */,
@@ -179,6 +185,7 @@
 		61D48FE6307DA764C33243AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0586317320FBDFD40001748F /* MapKit.framework */,
 				0560D18620FA9E1C00A600C2 /* CoreLocation.framework */,
 				B514A29CFAC8638A99C2768A /* Pods_trainz.framework */,
 			);
@@ -264,6 +271,11 @@
 				TargetAttributes = {
 					0589F10920EC99EB00522EA8 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Maps.Mac = {
+								enabled = 1;
+							};
+						};
 					};
 					0589F11B20EC99EE00522EA8 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -304,6 +316,7 @@
 				0591E1AF20ED82E4006F56AE /* metro-line.geojson in Resources */,
 				0591E1AB20ED172E006F56AE /* horn.aiff in Resources */,
 				0589F11520EC99EE00522EA8 /* Main.storyboard in Resources */,
+				0586317620FBE4930001748F /* EntranceToGoliathRoute.plist in Resources */,
 				0542ACDE20EEB5C90076711C /* classy_crab.stl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

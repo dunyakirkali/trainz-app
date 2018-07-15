@@ -4,4 +4,5 @@ inhibit_all_warnings!
 
 target "trainz" do
   pod "Turf", "~> 0.2"
+  pod "GEOSwift"
 end

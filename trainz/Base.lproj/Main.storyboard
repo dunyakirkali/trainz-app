@@ -711,7 +711,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <mapView mapType="satellite" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUP-lS-tyH">
+                            <mapView mapType="standard" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUP-lS-tyH">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                             </mapView>
                             <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="10" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X59-Pm-okC">
